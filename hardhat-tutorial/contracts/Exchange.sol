@@ -12,4 +12,7 @@ contract Exchange is ERC20 {
         );
         cryptoDevTokenAddress = _CryptoDevtoken;
     }
+    function getReserve() public view returns (uint) {
+    return ERC20(cryptoDevTokenAddress).balanceOf(address(this));
+}
 }
